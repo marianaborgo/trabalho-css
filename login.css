@@ -1,0 +1,119 @@
+body {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%),
+        url(netflix-fundo-photoaidcom-darken.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-attachment: fixed;
+    background-blend-mode: darken;
+    width: 50px;
+    height: 200px;
+    padding: 65px 68px 50px 68px;
+    border-radius: 5px;
+    ;
+}
+
+h2 {
+    color: white;
+    font-size: 2;
+    padding-bottom: 2px;
+    margin-bottom: 3px;
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.img-logo {
+    margin: 20px 0px 15px 20%;
+    height: 100px;
+}
+
+.email {
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(102, 93, 93);
+    outline: none;
+    padding-right: 65px;
+    padding-left: 1%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.senha {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    padding-top: 12px;
+    font-size: 16px;
+    outline: none;
+    padding-right: 65px;
+    padding-left: 1%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.label-senha {
+    font-size: 11px;
+    color: rgb(102, 100, 100);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+}
+
+.caixa {
+    font-size: 11px;
+    border: rgba(5, 5, 5, 0.747);
+    background: transparent;
+    margin: 2px 0px 0px 70px;
+}
+
+.fundo {
+    background-color: rgba(0, 0, 0, 0.747);
+    height: 450px;
+    width: 350px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-left: 450px;
+
+}
+
+.buttom-entrar {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 70px;
+    background-color: red;
+    color: rgb(209, 207, 207);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+}
+
+.link {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    color: rgb(102, 100, 100);
+    font-size: 10px;
+    margin-left: 70px;
+}
+
+.label-link {
+    color: rgb(216, 216, 216)
+}
+
+input [type="checkbox"] {
+    height: 50px;
+    width: 50px;
+}
+
+input[type="password"] {
+    background-color: rgb(90, 87, 87);
+    height: 25px;
+    width: 200px;
+}
+
+input[type="text"] {
+    background-color: rgb(90, 87, 87);
+    height: 25px;
+    width: 200px;
+}
+
+
+input::placeholder {
+    color: rgb(206, 192, 192)
+}

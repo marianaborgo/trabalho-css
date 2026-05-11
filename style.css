@@ -1,0 +1,114 @@
+/* Reset básico para ocupar a tela toda */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Substitua pela URL da imagem de fundo real da Netflix se desejar */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6ed3134-8b4b-4e06-9344-49199b007cb8/BR-pt-20220502-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+/* Opcional: Adicionar a logo do Netflix no topo esquerdo */
+body::before {
+    content: 'NETFLIX';
+    position: absolute;
+    top: 20px;
+    left: 45px;
+    color: #e50914;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+/* Estilização do formulário (o container central) */
+body {
+    flex-direction: column;
+}
+
+/* Vamos assumir que você colocará o conteúdo dentro de uma tag <main> ou div */
+/* Se não mudar o HTML, este estilo vai direto no body, mas o ideal é um container: */
+
+form,
+.login-container {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 60px 68px 40px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 28px;
+    font-weight: 700;
+}
+
+/* Estilização dos inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+label {
+    display: none;
+    /* Na Netflix original, os rótulos ficam ocultos ou são flutuantes */
+}
+
+/* Botão Entrar */
+button {
+    background: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #b9090b;
+}
+
+/* Checkbox e textos secundários */
+input[type="checkbox"] {
+    accent-color: #b3b3b3;
+}
+
+p,
+a {
+    color: #737373;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}

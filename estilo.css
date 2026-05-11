@@ -1,0 +1,207 @@
+/* Reset básico */
+* {
+    /* O asterisco seleciona e aplica as regras a absolutamente todos os elementos da página */
+    margin: 0;
+    /* Remove todas as margens externas padrão que os navegadores colocam */
+    padding: 0;
+    /* Remove todos os espaços internos padrão que os navegadores colocam */
+    box-sizing: border-box;
+    /* Impede que bordas e preenchimentos aumentem o tamanho total planejado */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Define as fontes padrão que serão usadas nos textos */
+}
+
+body {
+    /* Seleciona o corpo inteiro da página (o fundo de tudo) */
+    background-color: #141414;
+    /* Pinta o fundo da tela com o cinza quase preto da Netflix */
+    color: #ffffff;
+    /* Define que a cor padrão de todos os textos será branca */
+}
+
+/* Menu de Navegação */
+header {
+    /* Seleciona a parte do cabeçalho, onde ficam o logo e o menu */
+    display: flex;
+    /* Ativa o flexbox para alinhar os elementos (logo e menu) lado a lado na horizontal */
+    align-items: center;
+    /* Centraliza verticalmente os elementos dentro do cabeçalho */
+    padding: 20px 4%;
+    /* Cria um espaço interno de 20px no topo/base e 4% nas laterais esquerda/direita */
+    position: sticky;
+    /* Faz com que o cabeçalho "grude" na tela ao rolar a página para baixo */
+    top: 0;
+    /* Diz para o cabeçalho grudar exatamente no topo (0 pixels de distância) da tela */
+    z-index: 100;
+    /* Garante que o cabeçalho fique por cima de todas as imagens e não seja sobreposto por elas */
+}
+
+.logo {
+    /* Seleciona o elemento que possui a classe "logo" */
+    color: #E50914;
+    /* Vermelho Netflix */
+    font-size: 2rem;
+    /* Define um tamanho de fonte grande (equivalente a 32px na maioria dos casos) */
+    font-weight: 900;
+    /* Deixa o texto com o negrito mais forte e espesso possível */
+    margin-right: 40px;
+    /* Cria um espaço de 40px à direita do logo para empurrar o menu para o lado */
+    text-transform: uppercase;
+    /* Força todas as letras a ficarem MAIÚSCULAS automaticamente */
+}
+
+nav ul {
+    /* Seleciona a lista (ul) que está dentro da navegação (nav) */
+    display: flex;
+    /* Ativa o flexbox para colocar os itens da lista lado a lado */
+    list-style: none;
+    /* Remove aquelas bolinhas ou números padrão de listas do HTML */
+    gap: 20px;
+    /* Cria um espaço vazio (buraco) de 20px entre cada item do menu */
+}
+
+nav a {
+    /* Seleciona os links clicáveis (a) dentro do menu */
+    color: #e5e5e5;
+    /* Define a cor do texto do link como um cinza claro */
+    text-decoration: none;
+    /* Remove o sublinhado padrão que os links costumam ter */
+    font-size: 0.9rem;
+    /* Define o tamanho da fonte um pouquinho menor que o texto normal */
+    transition: color 0.3s ease;
+    /* Prepara o link para mudar de cor de forma suave, levando 0.3 segundos */
+}
+
+nav a:hover,
+nav a.ativo {
+    /* Seleciona o link quando passamos o mouse (hover) OU quando tem a classe ativo */
+    color: #ffffff;
+    /* Muda a cor para o branco puro (acendendo o texto) */
+    font-weight: bold;
+    /* Deixa a fonte em negrito para destacar que estamos nesta página */
+}
+
+/* Container de Conteúdo */
+main {
+    /* Seleciona a tag main, que guarda o conteúdo principal do seu site */
+    padding: 40px 4%;
+    /* Dá um respiro de 40px em cima/embaixo e 4% nas laterais, acompanhando o alinhamento do header */
+}
+
+h2 {
+    /* Seleciona os títulos secundários (ex: "Séries Populares") */
+    font-size: 1.4rem;
+    /* Define um tamanho adequado e grande para o título da seção */
+    margin-bottom: 15px;
+    /* Empurra os filmes 15px para baixo, criando uma separação entre título e conteúdo */
+}
+
+/* Grid de Cards (Padrão) */
+.grid-cards {
+    /* Seleciona a caixa invisível que agrupa todas as capas de filmes */
+    display: grid;
+    /* Ativa o CSS Grid, perfeito para organizar elementos em colunas e linhas perfeitas */
+    gap: 15px;
+    /* Define 15px de espaço entre os filmes (tanto na horizontal quanto na vertical) */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Cria colunas automáticas: cada uma terá no mínimo 200px, e se a tela for maior, elas crescem (1fr) para preencher o espaço */
+    margin-bottom: 40px;
+    /* Cria um espaço grande ao final da grade inteira antes da próxima seção começar */
+}
+
+/* O Card de Conteúdo */
+.card {
+    /* Seleciona o contêiner individual de cada filme (a capinha) */
+    position: relative;
+    /* Define os textos que vão flutuar por cima dele */
+    border-radius: 4px;
+    /* Deixa as 4 pontinhas do card arredondadas */
+    overflow: hidden;
+    /* Corta qualquer coisa (como imagens) que vaze para fora dos cantos arredondados do card */
+    cursor: pointer;
+    /* Muda a setinha do mouse para aquela "mãozinha" de clicar */
+    transition: transform 0.3s ease;
+    /* Prepara a animação para o card crescer de forma suave (0.3 segundos) */
+}
+
+.card img {
+    /* Seleciona a imagem exata dentro do card */
+    width: 100%;
+    /* Força a imagem a preencher toda a largura disponível do card */
+    height: 100%;
+    /* Força a imagem a preencher toda a altura disponível do card */
+    object-fit: cover;
+    /* Garante que a imagem preencha a área recortando o excesso sem esticar ou achatar a capa */
+    display: block;
+    /* Remove um pequeno espaço fantasma que os navegadores colocam embaixo de imagens por padrão */
+}
+
+/* Informação que aparece ao passar o mouse */
+.card-info {
+    /* Seleciona a caixinha que segura o texto (nome do filme) sobre a imagem */
+    position: absolute;
+    /* Tira o texto do fluxo da página para ele flutuar solto dentro */
+    bottom: 0;
+    /* Cola o texto na borda de baixo do card (0 pixels de distância do fundo) */
+    left: 0;
+    /* Cola no canto esquerdo */
+    right: 0;
+    /* Cola no canto direito (fazendo ele esticar de ponta a ponta) */
+    padding: 10px;
+    /* Dá espaço interno para o texto não ficar batendo nas bordas do card */
+    opacity: 0;
+    /* Deixa a caixinha de texto totalmente invisível (transparente) inicialmente */
+    transition: opacity 0.3s ease;
+    /* Prepara a transição suave para quando for aparecer */
+}
+
+.card:hover .card-info {
+    /* Diz: "Quando passar o mouse no .card, faça isso no .card-info que está dentro dele" */
+    opacity: 1;
+    /* Tira a transparência e deixa a caixinha de texto 100% visível */
+}
+
+/* Específico para o Top 10 */
+.top10-container {
+    /* Seleciona a caixa que segura o ranking do Top 10 */
+    display: flex;
+    /* Ativa o flexbox para alinhar todos os filmes do top 10 lado a lado numa linha horizontal */
+    gap: 20px;
+    /* Espaçamento de 20px entre os filmes do ranking */
+    overflow-x: auto;
+    /* Cria uma barra de rolagem horizontal caso existam muitos filmes na linha e eles não caibam na tela */
+    padding-bottom: 20px;
+    /* Cria um espaço embaixo para a barra de rolagem não passar por cima das capas dos filmes */
+}
+
+.card-top10 {
+    /* Seleciona o bloco individual de um filme do top 10 (contém o número e a capa) */
+    min-width: 250px;
+    /* Trava uma largura mínima, impedindo que a barra de rolagem esmague a largura do item */
+    display: flex;
+    /* Ativa flexbox de novo para colocar o Número Gigante e a capa do filme lado a lado */
+    align-items: center;
+    /* Centraliza o Número Gigante e a capa na vertical */
+    position: relative;
+    /* Serve como nova âncora para organizar as camadas Z dos elementos dentro dela */
+}
+
+.numero-ranking {
+    /* Seleciona o Número Gigante (1, 2, 3...) da lista */
+    font-size: 120px;
+    /* Deixa a fonte com 120 pixels de tamanho */
+    font-weight: 900;
+    /* Aplica o peso máximo no negrito */
+    color: #000;
+    /* Pinta o preenchimento do número de preto  */
+    margin-right: -30px;
+    /* Puxa a capa do filme 30px para a ESQUERDA, fazendo os dois se sobreporem */
+    z-index: 1;
+    /* Coloca o número numa camada abaixo da capa do filme (a capa ficará por cima da ponta dele) */
+}
+
+.card-top10 .card {
+    /* Seleciona APENAS o contêiner da capa de filme que estiver dentro da área do top 10 */
+    flex-grow: 1;
+    /* Manda a capa crescer o máximo que puder e ocupar todo o espaço restante ao lado do número gigante */
+}
